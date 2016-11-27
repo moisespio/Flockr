@@ -57,11 +57,7 @@ extension UIColor {
 }
 
 extension CALayer {
-    
-    func rounded() {
-        self.cornerRadius = self.frame.width / 2
-    }
-    
+
     func addBorder(_ edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
         
         let border = CALayer()
@@ -101,28 +97,6 @@ extension String {
         return NSMutableAttributedString(
             string: self,
             attributes: [NSFontAttributeName: UIFont.customFontWithSize(size), NSParagraphStyleAttributeName : style])
-    }
-}
-
-enum CustomFontWeight : String {
-    case Regular = ""
-    case Medium = "-Medium"
-    case Semibold = "-Semibold"
-    case Bold = "-Bold"
-}
-
-extension UIFont {
-    // Application fonts with attributes...
-    class func customFontWithSize(_ size: CGFloat) -> UIFont {
-        return customFontWithSize(size, weight: .Bold)
-    }
-
-    class func customFontWithSize(_ size: CGFloat, weight: CustomFontWeight) -> UIFont {
-        return UIFont(name: "HelveticaNeue\(weight.rawValue)", size: size)!
-    }
-    
-    class func customFontOpenSansWithSize(_ size: CGFloat, weight: CustomFontWeight) -> UIFont {
-        return UIFont(name: "OpenSans\(weight.rawValue)", size: size)!
     }
 }
 

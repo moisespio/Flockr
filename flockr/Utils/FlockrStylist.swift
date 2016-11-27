@@ -47,7 +47,11 @@ enum FlockrFontWeight : String {
 
 extension UIFont {
     
-    class func spotzFontWithSize(_ size: CGFloat, weight: FlockrFontWeight) -> UIFont {
+    class func customFontWithSize(_ size: CGFloat) -> UIFont {
+        return brandonFontWithSize(size, weight: .Bold)
+    }
+    
+    class func brandonFontWithSize(_ size: CGFloat, weight: FlockrFontWeight) -> UIFont {
         return UIFont(name: "Brandon\(weight.rawValue)", size: size)!
     }
     
