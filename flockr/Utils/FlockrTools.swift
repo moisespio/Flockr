@@ -7,7 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
+extension UIImageView {
+    func setImage(url: String) {
+        let resource = URL(string: url)
+        //let indicator : Indicator
+        let imageData = NSData(contentsOf: Bundle.main.url(forResource: "loader", withExtension: "gif")!)
+
+        self.kf.indicatorType = .image(imageData: imageData as! Data)
+        self.kf.setImage(with: resource)
+    }
+}
 extension UIColor {
     public convenience init(red255: CGFloat = 0, green255: CGFloat = 0, blue255: CGFloat = 0, alpha100:CGFloat = 100){
         self.init(red: red255/255.0, green: green255/255.0, blue: blue255/255.0, alpha: alpha100/100.0)

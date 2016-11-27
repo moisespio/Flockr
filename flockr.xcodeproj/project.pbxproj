@@ -15,6 +15,7 @@
 		BF29C4B91DEAB498003FAFCD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B51DEAB498003FAFCD /* Photo.swift */; };
 		BF29C4BA1DEAB498003FAFCD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B61DEAB498003FAFCD /* Profile.swift */; };
 		BF29C4BC1DEAB826003FAFCD /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */; };
+		BF5614331DEAC07100FEA7C3 /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF5614321DEAC07100FEA7C3 /* loader.gif */; };
 		BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E741DEA781B00900E2E /* AppDelegate.swift */; };
 		BF6F6E7C1DEA781B00900E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7A1DEA781B00900E2E /* Main.storyboard */; };
 		BF6F6E7E1DEA781B00900E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		BF29C4B61DEAB498003FAFCD /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		BF5614311DEABC1100FEA7C3 /* bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
+		BF5614321DEAC07100FEA7C3 /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
 		BF6F6E711DEA781B00900E2E /* flockr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flockr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F6E741DEA781B00900E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6F6E7B1DEA781B00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		BF6F6E911DEA829F00900E2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF5614321DEAC07100FEA7C3 /* loader.gif */,
 				BF6F6E921DEA82B100900E2E /* Fonts */,
 			);
 			path = Resources;
@@ -354,6 +357,7 @@
 				BF6F6EDB1DEA99F100900E2E /* Brandon_reg.otf in Resources */,
 				BF6F6E7C1DEA781B00900E2E /* Main.storyboard in Resources */,
 				BF6F6EC51DEA8CE000900E2E /* NewPost.storyboard in Resources */,
+				BF5614331DEAC07100FEA7C3 /* loader.gif in Resources */,
 				BF6F6ED31DEA99F100900E2E /* Brandon_bld.otf in Resources */,
 				BF6F6EDC1DEA99F100900E2E /* Brandon_reg_it.otf in Resources */,
 			);
@@ -511,6 +515,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -561,6 +566,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -590,6 +596,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD7ED63A7E7E59849560E463 /* Pods-flockr.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4NRYRR94WS;
@@ -608,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4EAA9393D11057EE6590DB3E /* Pods-flockr.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4NRYRR94WS;

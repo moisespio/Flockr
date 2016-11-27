@@ -38,7 +38,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //Functions
     func loadFeed() {
-        Feed.load(page: 0) { (_Feed, error) in
+        Feed.load(page: 3) { (_Feed, error) in
             DispatchQueue.main.async(execute: {
                 self.feed_list = _Feed
                 self.updateTableView()
@@ -60,8 +60,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = feed_list[indexPath.section]
         
         if let photo = post.photo, let file = photo.photo, let url = file.url {
-            let resource = URL(string: url)
-            cell.petPostPhoto.kf.setImage(with: resource)
+            cell.petPostPhoto.setImage(url: url)
         }
         
         cell.petPostCaption.text = post.photo.caption
@@ -77,8 +76,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.petProfileUsername.text = post.profile.nickname
         if let profile = post.profile, let file = profile.profileImage, let url = file.url {
-            let resource = URL(string: url)
-            cell.petProfilePhoto.kf.setImage(with: resource)
+            cell.petProfilePhoto.setImage(url: url)
         }
 
         let header = cell.contentView
