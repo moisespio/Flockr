@@ -19,7 +19,7 @@ class FlockrStylist: NSObject {
         UINavigationBar.appearance().barTintColor = UIColor(hexa: color.rawValue)
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont.customFontWithSize(18.0), NSForegroundColorAttributeName : UIColor.white]
+        //UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont.customFontWithSize(18.0), NSForegroundColorAttributeName : UIColor.white]
         
         UITableViewCell.appearance().preservesSuperviewLayoutMargins = true
         UITableViewCell.appearance().contentView.preservesSuperviewLayoutMargins = true
@@ -31,7 +31,7 @@ class FlockrStylist: NSObject {
 }
 
 enum FlockrFontWeight : String {
-    case Bold = "_bld"
+    case Bold = "Bold"
     case BoldItalic = "_bld_it"
     case Black = "_blk"
     case BlackItalic = "_blk_it"
@@ -52,7 +52,7 @@ extension UIFont {
     }
     
     class func brandonFontWithSize(_ size: CGFloat, weight: FlockrFontWeight) -> UIFont {
-        return UIFont(name: "Brandon\(weight.rawValue)", size: size)!
+        return UIFont(name: "Brandon-\(weight.rawValue)", size: size)!
     }
     
 }

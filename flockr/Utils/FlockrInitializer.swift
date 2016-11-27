@@ -7,34 +7,31 @@
 //
 
 import UIKit
+import Parse
 
 class FlockrInitializer: NSObject {
     
     class func startParseWithLaunchOptions(_ launchOptions: [AnyHashable: Any]?) {
-        /*SPZNegotiation.registerSubclass()
-        SPZNegotiationMessage.registerSubclass()
-        SPZPlaceImage.registerSubclass()
-        SPZRating.registerSubclass()
-        SPZPlace.registerSubclass()
-        SPZProposal.registerSubclass()
-        SPZFavorite.registerSubclass()
-        SPZUser.registerSubclass()
-        SPZNegotiationHistory.registerSubclass()
+        Profile.initialize()
+        Photo.initialize()
+        Follow.initialize()
+        Like.initialize()
         
         let configuration = ParseClientConfiguration {
-            $0.applicationId = "spotz"
-            $0.clientKey = "spotzClientKey"
-            //            $0.server = "http://localhost:1338/spotz" // $0.server = "http://172.16.1.5:1338/spotz"
-            //            $0.server = "http://172.16.1.5:1338/spotz"
-            $0.server = "http://ec2-54-191-28-37.us-west-2.compute.amazonaws.com:1338/spotz"
+            $0.applicationId = "XSZOLRwwnwXTE3MFeTtBDttdCUaaBTzVSOI0Wz2R"
+            $0.clientKey = "YMbMSh5m7LCvOqwQ2y2xgHzycy1vEfeMlmTL8EWL"
         }
+        
         Parse.initialize(with: configuration)
+        /*
+        
         //        Parse.setApplicationId(PARSE_APPLICATION_ID, clientKey: PARSE_CLIENT_KEY)
         PFAnalytics.trackAppOpened(launchOptions: launchOptions)
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
         
         PFConfig.getInBackground()
-         */
+     */
+ 
     }
     
     class func configurePushNotifications(_ application: UIApplication) {

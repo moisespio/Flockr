@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+
+    var feed_list : [Feed] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 700
+        
+        loadFeed()
         //tableView.tableFooterView = loaderView
         
         //GoogleAnalytics.trackerViewName("Feed")
@@ -30,25 +35,51 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         print(self)
     }
-    
+
+    //Functions
+    func loadFeed() {
+        Feed.load(page: 0) { (_Feed, error) in
+            DispatchQueue.main.async(execute: {
+                self.feed_list = _Feed
+                self.updateTableView()
+            })
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return feed_list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedCell.rawValue, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedCell.rawValue, for: indexPath) as! FeedTableViewCell
+        
+        let post = feed_list[indexPath.section]
+        
+        if let photo = post.photo, let file = photo.photo, let url = file.url {
+            let resource = URL(string: url)
+            cell.petPostPhoto.kf.setImage(with: resource)
+        }
+        
+        cell.petPostCaption.text = post.photo.caption
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
         let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.headerFeedCell.rawValue) as! HeaderFeedTableViewCell
-        
         cell.petProfilePhoto.radius()
+        
+        let post = feed_list[section]
+        
+        cell.petProfileUsername.text = post.profile.nickname
+        if let profile = post.profile, let file = profile.profileImage, let url = file.url {
+            let resource = URL(string: url)
+            cell.petProfilePhoto.kf.setImage(with: resource)
+        }
 
         let header = cell.contentView
         header.layer.addBorder(.bottom, color: UIColor(hexa: "#E5E5E5"), thickness: 1)

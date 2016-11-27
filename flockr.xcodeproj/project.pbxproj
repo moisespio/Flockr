@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45534CC98AC9C2239F9DA2D3 /* Pods_flockr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6521599E229E5FC307952235 /* Pods_flockr.framework */; };
 		BF29C4A81DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */; };
+		BF29C4AA1DEAB301003FAFCD /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4A91DEAB300003FAFCD /* Feed.swift */; };
+		BF29C4B71DEAB498003FAFCD /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B31DEAB498003FAFCD /* Follow.swift */; };
+		BF29C4B81DEAB498003FAFCD /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B41DEAB498003FAFCD /* Like.swift */; };
+		BF29C4B91DEAB498003FAFCD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B51DEAB498003FAFCD /* Photo.swift */; };
+		BF29C4BA1DEAB498003FAFCD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B61DEAB498003FAFCD /* Profile.swift */; };
+		BF29C4BC1DEAB826003FAFCD /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */; };
 		BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E741DEA781B00900E2E /* AppDelegate.swift */; };
 		BF6F6E7C1DEA781B00900E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7A1DEA781B00900E2E /* Main.storyboard */; };
 		BF6F6E7E1DEA781B00900E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */; };
@@ -38,7 +45,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EAA9393D11057EE6590DB3E /* Pods-flockr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flockr.release.xcconfig"; path = "Pods/Target Support Files/Pods-flockr/Pods-flockr.release.xcconfig"; sourceTree = "<group>"; };
+		6521599E229E5FC307952235 /* Pods_flockr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flockr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD7ED63A7E7E59849560E463 /* Pods-flockr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flockr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flockr/Pods-flockr.debug.xcconfig"; sourceTree = "<group>"; };
 		BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFeedTableViewCell.swift; sourceTree = "<group>"; };
+		BF29C4A91DEAB300003FAFCD /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		BF29C4B31DEAB498003FAFCD /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		BF29C4B41DEAB498003FAFCD /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		BF29C4B51DEAB498003FAFCD /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		BF29C4B61DEAB498003FAFCD /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		BF6F6E711DEA781B00900E2E /* flockr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flockr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F6E741DEA781B00900E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6F6E7B1DEA781B00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,17 +91,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45534CC98AC9C2239F9DA2D3 /* Pods_flockr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		561A3B4BD8152A0162330319 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD7ED63A7E7E59849560E463 /* Pods-flockr.debug.xcconfig */,
+				4EAA9393D11057EE6590DB3E /* Pods-flockr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B897F851A42BE67F0F8A485F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6521599E229E5FC307952235 /* Pods_flockr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF6F6E681DEA781B00900E2E = {
 			isa = PBXGroup;
 			children = (
 				BF6F6E731DEA781B00900E2E /* flockr */,
 				BF6F6E721DEA781B00900E2E /* Products */,
+				561A3B4BD8152A0162330319 /* Pods */,
+				B897F851A42BE67F0F8A485F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +158,11 @@
 		BF6F6E891DEA78CF00900E2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF29C4A91DEAB300003FAFCD /* Feed.swift */,
+				BF29C4B31DEAB498003FAFCD /* Follow.swift */,
+				BF29C4B41DEAB498003FAFCD /* Like.swift */,
+				BF29C4B51DEAB498003FAFCD /* Photo.swift */,
+				BF29C4B61DEAB498003FAFCD /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +247,7 @@
 			children = (
 				BF6F6EC11DEA8B0200900E2E /* FeedViewController.swift */,
 				BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */,
+				BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -236,9 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF6F6E851DEA781C00900E2E /* Build configuration list for PBXNativeTarget "flockr" */;
 			buildPhases = (
+				0349E1A30AA9278FA11D171F /* [CP] Check Pods Manifest.lock */,
 				BF6F6E6D1DEA781B00900E2E /* Sources */,
 				BF6F6E6E1DEA781B00900E2E /* Frameworks */,
 				BF6F6E6F1DEA781B00900E2E /* Resources */,
+				83CEFA0391665ADFE01DDCC3 /* [CP] Embed Pods Frameworks */,
+				DFBF4183A56D05BEC520ABB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,17 +359,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0349E1A30AA9278FA11D171F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		83CEFA0391665ADFE01DDCC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flockr/Pods-flockr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFBF4183A56D05BEC520ABB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flockr/Pods-flockr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF6F6E6D1DEA781B00900E2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF29C4BA1DEAB498003FAFCD /* Profile.swift in Sources */,
+				BF29C4B91DEAB498003FAFCD /* Photo.swift in Sources */,
 				BF29C4A81DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift in Sources */,
 				BF6F6E8D1DEA793F00900E2E /* CustomTabBarViewController.swift in Sources */,
 				BF6F6EBE1DEA876200900E2E /* FlockrInitializer.swift in Sources */,
 				BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */,
 				BF6F6EBA1DEA85F700900E2E /* FlockrConstants.swift in Sources */,
+				BF29C4B71DEAB498003FAFCD /* Follow.swift in Sources */,
+				BF29C4B81DEAB498003FAFCD /* Like.swift in Sources */,
+				BF29C4BC1DEAB826003FAFCD /* FeedTableViewCell.swift in Sources */,
 				BF6F6EBC1DEA85F700900E2E /* FlockrTools.swift in Sources */,
+				BF29C4AA1DEAB301003FAFCD /* Feed.swift in Sources */,
 				BF6F6EBB1DEA85F700900E2E /* FlockrStylist.swift in Sources */,
 				BF6F6EC21DEA8B0200900E2E /* FeedViewController.swift in Sources */,
 			);
@@ -487,10 +586,12 @@
 		};
 		BF6F6E861DEA781C00900E2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD7ED63A7E7E59849560E463 /* Pods-flockr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4NRYRR94WS;
 				INFOPLIST_FILE = flockr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = social.flockr.flockr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,10 +601,12 @@
 		};
 		BF6F6E871DEA781C00900E2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EAA9393D11057EE6590DB3E /* Pods-flockr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4NRYRR94WS;
 				INFOPLIST_FILE = flockr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = social.flockr.flockr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

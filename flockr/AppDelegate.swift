@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FlockrStylist.applyAppeareance(color: FlockrStylist.NavColors.Default)
         FlockrInitializer.startParseWithLaunchOptions(launchOptions)
-        FlockrInitializer.configurePushNotifications(application)
+        // FlockrInitializer.configurePushNotifications(application)
 
         return true
     }

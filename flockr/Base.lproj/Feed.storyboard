@@ -95,7 +95,7 @@
                                             <outlet property="petProfileUsername" destination="hhg-Bo-Nml" id="4eL-pg-1by"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="553" id="Dcc-JF-e2m">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="553" id="Dcc-JF-e2m" customClass="FeedTableViewCell" customModule="flockr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="375" height="553"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dcc-JF-e2m" id="f7E-Kx-tr2">
@@ -173,6 +173,10 @@
                                                 <constraint firstItem="EzN-zj-Bnm" firstAttribute="top" secondItem="aLF-Xi-blU" secondAttribute="bottom" constant="8" id="ynU-kh-ve7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="petPostCaption" destination="sFW-xS-C6d" id="z0k-Qv-cTb"/>
+                                            <outlet property="petPostPhoto" destination="aLF-Xi-blU" id="IT1-M7-yge"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
