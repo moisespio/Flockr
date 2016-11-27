@@ -31,9 +31,18 @@ class FlockrStylist: NSObject {
 }
 
 enum FlockrFontWeight : String {
-    case Bold = "_bold"
-    case Black = "_black"
+    case Bold = "_bld"
+    case BoldItalic = "_bld_it"
+    case Black = "_blk"
+    case BlackItalic = "_blk_it"
     case Light = "_light"
+    case LightItalic = "_light_it"
+    case Medium = "_med"
+    case MediumItalic = "_med_it"
+    case Regular = "_reg"
+    case RegultarItalic = "_reg_it"
+    case Thin = "_thin"
+    case ThinItalic = "_thin_it"
 }
 
 extension UIFont {

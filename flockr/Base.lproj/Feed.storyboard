@@ -10,8 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="brandon_light.ttf">
-            <string>BrandonGrotesque-Light</string>
+        <array key="Brandon_blk.otf">
+            <string>BrandonGrotesque-Black</string>
+        </array>
+        <array key="Brandon_med.otf">
+            <string>BrandonGrotesque-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -19,7 +22,7 @@
         <scene sceneID="h0n-h0-fis">
             <objects>
                 <navigationController storyboardIdentifier="Feed" id="Xav-GX-2CA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3bf-9e-K8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bf-9e-K8e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -55,7 +58,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="bpD-Rd-7j0">
-                                                    <rect key="frame" x="20" y="4.5" width="40" height="40"/>
+                                                    <rect key="frame" x="20" y="5" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="3ZD-3B-49S"/>
                                                         <constraint firstAttribute="height" constant="40" id="dra-zC-ZbM"/>
@@ -64,15 +67,23 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@dogmaneiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-Bo-Nml">
                                                     <rect key="frame" x="68" y="14" width="107" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="14"/>
                                                     <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 HORAS ATRAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsk-Pe-0D5">
+                                                    <rect key="frame" x="280" y="18" width="75" height="15"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="10"/>
+                                                    <color key="textColor" red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="bpD-Rd-7j0" firstAttribute="centerY" secondItem="ln4-8e-cK4" secondAttribute="centerY" id="LIF-Q1-87u"/>
+                                                <constraint firstItem="vsk-Pe-0D5" firstAttribute="centerY" secondItem="ln4-8e-cK4" secondAttribute="centerY" id="SM5-Jy-fHp"/>
                                                 <constraint firstItem="bpD-Rd-7j0" firstAttribute="leading" secondItem="ln4-8e-cK4" secondAttribute="leading" constant="20" id="WJ1-UR-zfk"/>
+                                                <constraint firstAttribute="trailing" secondItem="vsk-Pe-0D5" secondAttribute="trailing" constant="20" id="jRa-QH-AA4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -98,14 +109,14 @@
                                                     </variation>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" text="Olá amiguinhos! Essa é a minha primeira foto aqui nesse aplicativo muito legal. Espero que gostem!" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-xS-C6d">
-                                                    <rect key="frame" x="8" y="383" width="359" height="289.5"/>
+                                                    <rect key="frame" x="8" y="383" width="359" height="290"/>
                                                     <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68S-jb-m5b">
-                                                    <rect key="frame" x="0.0" y="682.5" width="375" height="20"/>
+                                                    <rect key="frame" x="0.0" y="683" width="375" height="20"/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="wRr-hE-v6S"/>
@@ -148,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za5-d6-wL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223.2" y="-823.53823088455783"/>
+            <point key="canvasLocation" x="1231" y="-814"/>
         </scene>
     </scenes>
     <resources>
