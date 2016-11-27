@@ -8,22 +8,64 @@
 
 /* Begin PBXBuildFile section */
 		BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E741DEA781B00900E2E /* AppDelegate.swift */; };
-		BF6F6E771DEA781B00900E2E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E761DEA781B00900E2E /* MasterViewController.swift */; };
-		BF6F6E791DEA781B00900E2E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E781DEA781B00900E2E /* DetailViewController.swift */; };
 		BF6F6E7C1DEA781B00900E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7A1DEA781B00900E2E /* Main.storyboard */; };
 		BF6F6E7E1DEA781B00900E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */; };
 		BF6F6E811DEA781B00900E2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7F1DEA781B00900E2E /* LaunchScreen.storyboard */; };
+		BF6F6E8D1DEA793F00900E2E /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E8C1DEA793F00900E2E /* CustomTabBarViewController.swift */; };
+		BF6F6E901DEA823D00900E2E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E8E1DEA823D00900E2E /* Profile.storyboard */; };
+		BF6F6EAD1DEA835900900E2E /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EAB1DEA835900900E2E /* Notification.storyboard */; };
+		BF6F6EB01DEA83E300900E2E /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EAE1DEA83E300900E2E /* Feed.storyboard */; };
+		BF6F6EB31DEA84D300900E2E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EB11DEA84D300900E2E /* Search.storyboard */; };
+		BF6F6EBA1DEA85F700900E2E /* FlockrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6EB71DEA85F700900E2E /* FlockrConstants.swift */; };
+		BF6F6EBB1DEA85F700900E2E /* FlockrStylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6EB81DEA85F700900E2E /* FlockrStylist.swift */; };
+		BF6F6EBC1DEA85F700900E2E /* FlockrTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6EB91DEA85F700900E2E /* FlockrTools.swift */; };
+		BF6F6EBE1DEA876200900E2E /* FlockrInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6EBD1DEA876200900E2E /* FlockrInitializer.swift */; };
+		BF6F6EC21DEA8B0200900E2E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6EC11DEA8B0200900E2E /* FeedViewController.swift */; };
+		BF6F6EC51DEA8CE000900E2E /* NewPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EC31DEA8CE000900E2E /* NewPost.storyboard */; };
+		BF6F6ED31DEA99F100900E2E /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EC71DEA99F000900E2E /* Brandon_bld.otf */; };
+		BF6F6ED41DEA99F100900E2E /* Brandon_bld_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EC81DEA99F000900E2E /* Brandon_bld_it.otf */; };
+		BF6F6ED51DEA99F100900E2E /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6EC91DEA99F000900E2E /* Brandon_blk.otf */; };
+		BF6F6ED61DEA99F100900E2E /* Brandon_blk_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ECA1DEA99F000900E2E /* Brandon_blk_it.otf */; };
+		BF6F6ED71DEA99F100900E2E /* Brandon_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ECB1DEA99F000900E2E /* Brandon_light.otf */; };
+		BF6F6ED81DEA99F100900E2E /* Brandon_light_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ECC1DEA99F000900E2E /* Brandon_light_it.otf */; };
+		BF6F6ED91DEA99F100900E2E /* Brandon_med.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ECD1DEA99F000900E2E /* Brandon_med.otf */; };
+		BF6F6EDA1DEA99F100900E2E /* Brandon_med_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ECE1DEA99F000900E2E /* Brandon_med_it.otf */; };
+		BF6F6EDB1DEA99F100900E2E /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ECF1DEA99F100900E2E /* Brandon_reg.otf */; };
+		BF6F6EDC1DEA99F100900E2E /* Brandon_reg_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ED01DEA99F100900E2E /* Brandon_reg_it.otf */; };
+		BF6F6EDD1DEA99F100900E2E /* Brandon_thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ED11DEA99F100900E2E /* Brandon_thin.otf */; };
+		BF6F6EDE1DEA99F100900E2E /* Brandon_thin_it.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6ED21DEA99F100900E2E /* Brandon_thin_it.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF6F6E711DEA781B00900E2E /* flockr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flockr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F6E741DEA781B00900E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF6F6E761DEA781B00900E2E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		BF6F6E781DEA781B00900E2E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF6F6E7B1DEA781B00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF6F6E801DEA781B00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF6F6E821DEA781B00900E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF6F6E8C1DEA793F00900E2E /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		BF6F6E8F1DEA823D00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		BF6F6EAC1DEA835900900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notification.storyboard; sourceTree = "<group>"; };
+		BF6F6EAF1DEA83E300900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
+		BF6F6EB21DEA84D300900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		BF6F6EB71DEA85F700900E2E /* FlockrConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlockrConstants.swift; sourceTree = "<group>"; };
+		BF6F6EB81DEA85F700900E2E /* FlockrStylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlockrStylist.swift; sourceTree = "<group>"; };
+		BF6F6EB91DEA85F700900E2E /* FlockrTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlockrTools.swift; sourceTree = "<group>"; };
+		BF6F6EBD1DEA876200900E2E /* FlockrInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlockrInitializer.swift; sourceTree = "<group>"; };
+		BF6F6EC11DEA8B0200900E2E /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		BF6F6EC41DEA8CE000900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewPost.storyboard; sourceTree = "<group>"; };
+		BF6F6EC71DEA99F000900E2E /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
+		BF6F6EC81DEA99F000900E2E /* Brandon_bld_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld_it.otf; sourceTree = "<group>"; };
+		BF6F6EC91DEA99F000900E2E /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
+		BF6F6ECA1DEA99F000900E2E /* Brandon_blk_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk_it.otf; sourceTree = "<group>"; };
+		BF6F6ECB1DEA99F000900E2E /* Brandon_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_light.otf; sourceTree = "<group>"; };
+		BF6F6ECC1DEA99F000900E2E /* Brandon_light_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_light_it.otf; sourceTree = "<group>"; };
+		BF6F6ECD1DEA99F000900E2E /* Brandon_med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med.otf; sourceTree = "<group>"; };
+		BF6F6ECE1DEA99F000900E2E /* Brandon_med_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med_it.otf; sourceTree = "<group>"; };
+		BF6F6ECF1DEA99F100900E2E /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
+		BF6F6ED01DEA99F100900E2E /* Brandon_reg_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg_it.otf; sourceTree = "<group>"; };
+		BF6F6ED11DEA99F100900E2E /* Brandon_thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_thin.otf; sourceTree = "<group>"; };
+		BF6F6ED21DEA99F100900E2E /* Brandon_thin_it.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_thin_it.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +98,132 @@
 		BF6F6E731DEA781B00900E2E /* flockr */ = {
 			isa = PBXGroup;
 			children = (
-				BF6F6E741DEA781B00900E2E /* AppDelegate.swift */,
-				BF6F6E761DEA781B00900E2E /* MasterViewController.swift */,
-				BF6F6E781DEA781B00900E2E /* DetailViewController.swift */,
-				BF6F6E7A1DEA781B00900E2E /* Main.storyboard */,
-				BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */,
-				BF6F6E7F1DEA781B00900E2E /* LaunchScreen.storyboard */,
-				BF6F6E821DEA781B00900E2E /* Info.plist */,
+				BF6F6E8B1DEA78EE00900E2E /* Application */,
+				BF6F6EB41DEA85A600900E2E /* Utils */,
+				BF6F6E911DEA829F00900E2E /* Resources */,
+				BF6F6E891DEA78CF00900E2E /* Model */,
+				BF6F6E8A1DEA78D200900E2E /* View */,
+				BF6F6E881DEA78C500900E2E /* Controller */,
 			);
 			path = flockr;
+			sourceTree = "<group>";
+		};
+		BF6F6E881DEA78C500900E2E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6EBF1DEA8AE100900E2E /* TabBar */,
+				BF6F6EC01DEA8AE800900E2E /* Feed */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF6F6E891DEA78CF00900E2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF6F6E8A1DEA78D200900E2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */,
+				BF6F6E7F1DEA781B00900E2E /* LaunchScreen.storyboard */,
+				BF6F6E7A1DEA781B00900E2E /* Main.storyboard */,
+				BF6F6E8E1DEA823D00900E2E /* Profile.storyboard */,
+				BF6F6EAB1DEA835900900E2E /* Notification.storyboard */,
+				BF6F6EAE1DEA83E300900E2E /* Feed.storyboard */,
+				BF6F6EB11DEA84D300900E2E /* Search.storyboard */,
+				BF6F6EC31DEA8CE000900E2E /* NewPost.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BF6F6E8B1DEA78EE00900E2E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6E821DEA781B00900E2E /* Info.plist */,
+				BF6F6E741DEA781B00900E2E /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		BF6F6E911DEA829F00900E2E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6E921DEA82B100900E2E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BF6F6E921DEA82B100900E2E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6EC61DEA99F000900E2E /* Brandon Grotesque */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BF6F6EB41DEA85A600900E2E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6EB61DEA85D800900E2E /* Tools */,
+				BF6F6EB51DEA85AC00900E2E /* Subclass */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BF6F6EB51DEA85AC00900E2E /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Subclass;
+			sourceTree = "<group>";
+		};
+		BF6F6EB61DEA85D800900E2E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6EB71DEA85F700900E2E /* FlockrConstants.swift */,
+				BF6F6EB81DEA85F700900E2E /* FlockrStylist.swift */,
+				BF6F6EB91DEA85F700900E2E /* FlockrTools.swift */,
+				BF6F6EBD1DEA876200900E2E /* FlockrInitializer.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		BF6F6EBF1DEA8AE100900E2E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6E8C1DEA793F00900E2E /* CustomTabBarViewController.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		BF6F6EC01DEA8AE800900E2E /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6EC11DEA8B0200900E2E /* FeedViewController.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		BF6F6EC61DEA99F000900E2E /* Brandon Grotesque */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F6EC71DEA99F000900E2E /* Brandon_bld.otf */,
+				BF6F6EC81DEA99F000900E2E /* Brandon_bld_it.otf */,
+				BF6F6EC91DEA99F000900E2E /* Brandon_blk.otf */,
+				BF6F6ECA1DEA99F000900E2E /* Brandon_blk_it.otf */,
+				BF6F6ECB1DEA99F000900E2E /* Brandon_light.otf */,
+				BF6F6ECC1DEA99F000900E2E /* Brandon_light_it.otf */,
+				BF6F6ECD1DEA99F000900E2E /* Brandon_med.otf */,
+				BF6F6ECE1DEA99F000900E2E /* Brandon_med_it.otf */,
+				BF6F6ECF1DEA99F100900E2E /* Brandon_reg.otf */,
+				BF6F6ED01DEA99F100900E2E /* Brandon_reg_it.otf */,
+				BF6F6ED11DEA99F100900E2E /* Brandon_thin.otf */,
+				BF6F6ED21DEA99F100900E2E /* Brandon_thin_it.otf */,
+			);
+			path = "Brandon Grotesque";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +286,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6F6ED61DEA99F100900E2E /* Brandon_blk_it.otf in Resources */,
+				BF6F6EDA1DEA99F100900E2E /* Brandon_med_it.otf in Resources */,
 				BF6F6E811DEA781B00900E2E /* LaunchScreen.storyboard in Resources */,
+				BF6F6ED71DEA99F100900E2E /* Brandon_light.otf in Resources */,
+				BF6F6ED51DEA99F100900E2E /* Brandon_blk.otf in Resources */,
+				BF6F6ED91DEA99F100900E2E /* Brandon_med.otf in Resources */,
+				BF6F6ED81DEA99F100900E2E /* Brandon_light_it.otf in Resources */,
+				BF6F6EB01DEA83E300900E2E /* Feed.storyboard in Resources */,
 				BF6F6E7E1DEA781B00900E2E /* Assets.xcassets in Resources */,
+				BF6F6EB31DEA84D300900E2E /* Search.storyboard in Resources */,
+				BF6F6ED41DEA99F100900E2E /* Brandon_bld_it.otf in Resources */,
+				BF6F6E901DEA823D00900E2E /* Profile.storyboard in Resources */,
+				BF6F6EDE1DEA99F100900E2E /* Brandon_thin_it.otf in Resources */,
+				BF6F6EAD1DEA835900900E2E /* Notification.storyboard in Resources */,
+				BF6F6EDD1DEA99F100900E2E /* Brandon_thin.otf in Resources */,
+				BF6F6EDB1DEA99F100900E2E /* Brandon_reg.otf in Resources */,
 				BF6F6E7C1DEA781B00900E2E /* Main.storyboard in Resources */,
+				BF6F6EC51DEA8CE000900E2E /* NewPost.storyboard in Resources */,
+				BF6F6ED31DEA99F100900E2E /* Brandon_bld.otf in Resources */,
+				BF6F6EDC1DEA99F100900E2E /* Brandon_reg_it.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6F6E791DEA781B00900E2E /* DetailViewController.swift in Sources */,
-				BF6F6E771DEA781B00900E2E /* MasterViewController.swift in Sources */,
+				BF6F6E8D1DEA793F00900E2E /* CustomTabBarViewController.swift in Sources */,
+				BF6F6EBE1DEA876200900E2E /* FlockrInitializer.swift in Sources */,
 				BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */,
+				BF6F6EBA1DEA85F700900E2E /* FlockrConstants.swift in Sources */,
+				BF6F6EBC1DEA85F700900E2E /* FlockrTools.swift in Sources */,
+				BF6F6EBB1DEA85F700900E2E /* FlockrStylist.swift in Sources */,
+				BF6F6EC21DEA8B0200900E2E /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +343,46 @@
 				BF6F6E801DEA781B00900E2E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BF6F6E8E1DEA823D00900E2E /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6F6E8F1DEA823D00900E2E /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
+		BF6F6EAB1DEA835900900E2E /* Notification.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6F6EAC1DEA835900900E2E /* Base */,
+			);
+			name = Notification.storyboard;
+			sourceTree = "<group>";
+		};
+		BF6F6EAE1DEA83E300900E2E /* Feed.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6F6EAF1DEA83E300900E2E /* Base */,
+			);
+			name = Feed.storyboard;
+			sourceTree = "<group>";
+		};
+		BF6F6EB11DEA84D300900E2E /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6F6EB21DEA84D300900E2E /* Base */,
+			);
+			name = Search.storyboard;
+			sourceTree = "<group>";
+		};
+		BF6F6EC31DEA8CE000900E2E /* NewPost.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6F6EC41DEA8CE000900E2E /* Base */,
+			);
+			name = NewPost.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
