@@ -55,6 +55,7 @@
 		BF29C4B51DEAB498003FAFCD /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		BF29C4B61DEAB498003FAFCD /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		BF5614311DEABC1100FEA7C3 /* bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
 		BF6F6E711DEA781B00900E2E /* flockr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flockr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F6E741DEA781B00900E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6F6E7B1DEA781B00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6F6E821DEA781B00900E2E /* Info.plist */,
+				BF5614311DEABC1100FEA7C3 /* bridging-header.h */,
 				BF6F6E741DEA781B00900E2E /* AppDelegate.swift */,
 			);
 			name = Application;
@@ -589,12 +591,15 @@
 			baseConfigurationReference = BD7ED63A7E7E59849560E463 /* Pods-flockr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4NRYRR94WS;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = flockr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = social.flockr.flockr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flockr/bridging-header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -604,12 +609,15 @@
 			baseConfigurationReference = 4EAA9393D11057EE6590DB3E /* Pods-flockr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4NRYRR94WS;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = flockr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = social.flockr.flockr2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flockr/bridging-header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
