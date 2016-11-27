@@ -46,9 +46,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.headerFeedCell.rawValue)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.headerFeedCell.rawValue) as! HeaderFeedTableViewCell
         
-        return cell!.contentView
+        cell.petProfilePhoto.radius()
+
+        let header = cell.contentView
+        header.layer.addBorder(.bottom, color: UIColor(hexa: "#E5E5E5"), thickness: 1)
+        header.layer.addBorder(.top, color: UIColor(hexa: "#E5E5E5"), thickness: 1)
+        
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -92,7 +98,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func updateTableView() {
         //refreshControl.endRefreshing()
-        // tableView.reloadData()
+        tableView.reloadData()
         //activityIndicator.stopAnimating()
     }
     

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,7 +23,7 @@
         <scene sceneID="h0n-h0-fis">
             <objects>
                 <navigationController storyboardIdentifier="Feed" id="Xav-GX-2CA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bf-9e-K8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3bf-9e-K8e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -50,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerFeedCell" rowHeight="50" id="gSR-a5-lAO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerFeedCell" rowHeight="50" id="gSR-a5-lAO" customClass="HeaderFeedTableViewCell" customModule="flockr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSR-a5-lAO" id="ln4-8e-cK4">
@@ -58,15 +59,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="bpD-Rd-7j0">
-                                                    <rect key="frame" x="20" y="5" width="40" height="40"/>
+                                                    <rect key="frame" x="12" y="5" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="3ZD-3B-49S"/>
                                                         <constraint firstAttribute="height" constant="40" id="dra-zC-ZbM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@dogmaneiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-Bo-Nml">
-                                                    <rect key="frame" x="68" y="14" width="107" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@dogmaneiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-Bo-Nml">
+                                                    <rect key="frame" x="60" y="14" width="79" height="21"/>
                                                     <fontDescription key="fontDescription" name="BrandonGrotesque-Medium" family="Brandon Grotesque" pointSize="14"/>
                                                     <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -78,20 +78,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="hhg-Bo-Nml" firstAttribute="leading" secondItem="bpD-Rd-7j0" secondAttribute="trailing" constant="8" id="KCN-yD-zy2"/>
                                                 <constraint firstItem="bpD-Rd-7j0" firstAttribute="centerY" secondItem="ln4-8e-cK4" secondAttribute="centerY" id="LIF-Q1-87u"/>
                                                 <constraint firstItem="vsk-Pe-0D5" firstAttribute="centerY" secondItem="ln4-8e-cK4" secondAttribute="centerY" id="SM5-Jy-fHp"/>
-                                                <constraint firstItem="bpD-Rd-7j0" firstAttribute="leading" secondItem="ln4-8e-cK4" secondAttribute="leading" constant="20" id="WJ1-UR-zfk"/>
+                                                <constraint firstItem="bpD-Rd-7j0" firstAttribute="leading" secondItem="ln4-8e-cK4" secondAttribute="leading" constant="12" id="WJ1-UR-zfk"/>
                                                 <constraint firstAttribute="trailing" secondItem="vsk-Pe-0D5" secondAttribute="trailing" constant="20" id="jRa-QH-AA4"/>
+                                                <constraint firstItem="hhg-Bo-Nml" firstAttribute="centerY" secondItem="bpD-Rd-7j0" secondAttribute="centerY" id="yBc-BY-qC8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="petPostTimeAgo" destination="vsk-Pe-0D5" id="GbP-If-Mcc"/>
+                                            <outlet property="petProfilePhoto" destination="bpD-Rd-7j0" id="Fes-Aw-ZpD"/>
+                                            <outlet property="petProfileUsername" destination="hhg-Bo-Nml" id="4eL-pg-1by"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="703" id="Dcc-JF-e2m">
-                                        <rect key="frame" x="0.0" y="78" width="375" height="703"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="553" id="Dcc-JF-e2m">
+                                        <rect key="frame" x="0.0" y="78" width="375" height="553"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dcc-JF-e2m" id="f7E-Kx-tr2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="703"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="aLF-Xi-blU">
@@ -108,32 +116,61 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" text="Olá amiguinhos! Essa é a minha primeira foto aqui nesse aplicativo muito legal. Espero que gostem!" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-xS-C6d">
-                                                    <rect key="frame" x="8" y="383" width="359" height="290"/>
+                                                <textView clipsSubviews="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" text="Olá amiguinhos! Essa é a minha primeira foto aqui nesse aplicativo muito legal. Espero que gostem!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sFW-xS-C6d">
+                                                    <rect key="frame" x="8" y="410" width="359" height="143"/>
                                                     <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68S-jb-m5b">
-                                                    <rect key="frame" x="0.0" y="683" width="375" height="20"/>
-                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="wRr-hE-v6S"/>
-                                                    </constraints>
-                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow-feed" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-SI-v3k">
+                                                    <rect key="frame" x="0.0" y="311" width="375" height="64"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-eI-iV6">
+                                                    <rect key="frame" x="176" y="343" width="22" height="22"/>
+                                                    <state key="normal" image="heart"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ3-DB-No8">
+                                                    <rect key="frame" x="12" y="343" width="20" height="22"/>
+                                                    <state key="normal" image="photo-options"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzN-zj-Bnm">
+                                                    <rect key="frame" x="8" y="383" width="174" height="27"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="10"/>
+                                                    <state key="normal" title="0 CURTIDAS">
+                                                        <color key="titleColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB4-l1-YyN">
+                                                    <rect key="frame" x="194" y="383" width="173" height="27"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="10"/>
+                                                    <state key="normal" title="0 COMENTÁRIOS ">
+                                                        <color key="titleColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sFW-xS-C6d" firstAttribute="top" secondItem="aLF-Xi-blU" secondAttribute="bottom" constant="8" id="2d7-YQ-WCz"/>
+                                                <constraint firstItem="BMp-eI-iV6" firstAttribute="bottom" secondItem="KkZ-SI-v3k" secondAttribute="bottom" constant="-10" id="0fs-hs-rdj"/>
+                                                <constraint firstItem="XB4-l1-YyN" firstAttribute="centerY" secondItem="EzN-zj-Bnm" secondAttribute="centerY" id="0oH-zD-Vwa"/>
+                                                <constraint firstItem="XB4-l1-YyN" firstAttribute="width" secondItem="EzN-zj-Bnm" secondAttribute="width" id="1bF-Iq-gcq"/>
                                                 <constraint firstItem="sFW-xS-C6d" firstAttribute="leading" secondItem="f7E-Kx-tr2" secondAttribute="leading" constant="8" id="4nr-k3-Pn8"/>
                                                 <constraint firstAttribute="trailing" secondItem="aLF-Xi-blU" secondAttribute="trailing" id="57O-aP-05m"/>
-                                                <constraint firstAttribute="bottom" secondItem="68S-jb-m5b" secondAttribute="bottom" id="5UF-86-KU6"/>
+                                                <constraint firstItem="qQ3-DB-No8" firstAttribute="centerY" secondItem="BMp-eI-iV6" secondAttribute="centerY" id="6B0-dE-G3n"/>
+                                                <constraint firstAttribute="bottom" secondItem="sFW-xS-C6d" secondAttribute="bottom" id="87f-ic-pKe"/>
+                                                <constraint firstAttribute="trailing" secondItem="KkZ-SI-v3k" secondAttribute="trailing" id="BFA-Yj-yWQ"/>
                                                 <constraint firstItem="aLF-Xi-blU" firstAttribute="leading" secondItem="f7E-Kx-tr2" secondAttribute="leading" id="CCr-k6-SEa"/>
                                                 <constraint firstItem="aLF-Xi-blU" firstAttribute="top" secondItem="f7E-Kx-tr2" secondAttribute="top" id="CEr-d0-AQm"/>
                                                 <constraint firstAttribute="trailing" secondItem="sFW-xS-C6d" secondAttribute="trailing" constant="8" id="IlB-Ev-XWi"/>
-                                                <constraint firstItem="68S-jb-m5b" firstAttribute="top" secondItem="sFW-xS-C6d" secondAttribute="bottom" constant="10" id="K9s-cV-SDu"/>
-                                                <constraint firstItem="68S-jb-m5b" firstAttribute="leading" secondItem="f7E-Kx-tr2" secondAttribute="leading" id="anw-VR-PUS"/>
-                                                <constraint firstAttribute="trailing" secondItem="68S-jb-m5b" secondAttribute="trailing" id="bMY-BV-LJv"/>
+                                                <constraint firstItem="KkZ-SI-v3k" firstAttribute="bottom" secondItem="aLF-Xi-blU" secondAttribute="bottom" id="OEF-Ly-D9k"/>
+                                                <constraint firstItem="XB4-l1-YyN" firstAttribute="height" secondItem="EzN-zj-Bnm" secondAttribute="height" id="QrS-Rz-cWr"/>
+                                                <constraint firstItem="KkZ-SI-v3k" firstAttribute="leading" secondItem="f7E-Kx-tr2" secondAttribute="leading" id="VBr-HI-z9c"/>
+                                                <constraint firstItem="sFW-xS-C6d" firstAttribute="top" secondItem="EzN-zj-Bnm" secondAttribute="bottom" id="XPv-iG-elh"/>
+                                                <constraint firstItem="EzN-zj-Bnm" firstAttribute="leading" secondItem="f7E-Kx-tr2" secondAttribute="leading" constant="8" id="XWX-rz-9Ru"/>
+                                                <constraint firstItem="qQ3-DB-No8" firstAttribute="leading" secondItem="f7E-Kx-tr2" secondAttribute="leadingMargin" constant="4" id="oBd-q9-ikd"/>
+                                                <constraint firstAttribute="trailing" secondItem="XB4-l1-YyN" secondAttribute="trailing" constant="8" id="pwR-Uz-woJ"/>
+                                                <constraint firstItem="BMp-eI-iV6" firstAttribute="centerX" secondItem="f7E-Kx-tr2" secondAttribute="centerX" id="thI-hz-HNo"/>
+                                                <constraint firstItem="XB4-l1-YyN" firstAttribute="leading" secondItem="EzN-zj-Bnm" secondAttribute="trailing" constant="12" id="uDy-3X-AFh"/>
+                                                <constraint firstItem="EzN-zj-Bnm" firstAttribute="top" secondItem="aLF-Xi-blU" secondAttribute="bottom" constant="8" id="ynU-kh-ve7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -164,5 +201,8 @@
     </scenes>
     <resources>
         <image name="Photo" width="375" height="377"/>
+        <image name="heart" width="22" height="21"/>
+        <image name="photo-options" width="20" height="4"/>
+        <image name="shadow-feed" width="20" height="64"/>
     </resources>
 </document>

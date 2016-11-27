@@ -58,6 +58,10 @@ extension UIColor {
 
 extension CALayer {
     
+    func rounded() {
+        self.cornerRadius = self.frame.width / 2
+    }
+    
     func addBorder(_ edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
         
         let border = CALayer()

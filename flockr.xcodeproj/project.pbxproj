@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF29C4A81DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */; };
 		BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F6E741DEA781B00900E2E /* AppDelegate.swift */; };
 		BF6F6E7C1DEA781B00900E2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7A1DEA781B00900E2E /* Main.storyboard */; };
 		BF6F6E7E1DEA781B00900E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6F6E7D1DEA781B00900E2E /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFeedTableViewCell.swift; sourceTree = "<group>"; };
 		BF6F6E711DEA781B00900E2E /* flockr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flockr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F6E741DEA781B00900E2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6F6E7B1DEA781B00900E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6F6EC11DEA8B0200900E2E /* FeedViewController.swift */,
+				BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF29C4A81DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift in Sources */,
 				BF6F6E8D1DEA793F00900E2E /* CustomTabBarViewController.swift in Sources */,
 				BF6F6EBE1DEA876200900E2E /* FlockrInitializer.swift in Sources */,
 				BF6F6E751DEA781B00900E2E /* AppDelegate.swift in Sources */,
@@ -526,6 +530,7 @@
 				BF6F6E871DEA781C00900E2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
