@@ -42,6 +42,8 @@ enum FlockrSegues: String {
 }
 
 enum FlockrCells: String {
-    case feedCell = "feedCell"
+    case feedPhotoCell = "feedPhotoCell"
+    case feedCaptionCell = "feedCaptionCell"
+    case feedStatusCell = "feedStatusCell"
     case headerFeedCell = "headerFeedCell"
 }

@@ -10,13 +10,16 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    func setImage(url: String) {
-        let resource = URL(string: url)
-        //let indicator : Indicator
-        let imageData = NSData(contentsOf: Bundle.main.url(forResource: "loader", withExtension: "gif")!)
+    func setImage(url: String, customLoader : Bool = false) {
+        if customLoader{
+            let imageData = NSData(contentsOf: Bundle.main.url(forResource: "loader", withExtension: "gif")!)
+            self.kf.indicatorType = .image(imageData: imageData as! Data)
+        } else {
+            self.kf.indicatorType = .activity
+        }
 
-        self.kf.indicatorType = .image(imageData: imageData as! Data)
-        self.kf.setImage(with: resource)
+        let resource = URL(string: url)
+        _ = self.kf.setImage(with: resource, placeholder: nil, options: [.transition(ImageTransition.fade(1))], progressBlock: nil, completionHandler: nil)
     }
 }
 extension UIColor {
@@ -70,6 +73,7 @@ extension UIColor {
 extension CALayer {
 
     func addBorder(_ edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+        self.drawsAsynchronously = true
         
         let border = CALayer()
 
@@ -137,6 +141,7 @@ extension UIView {
         }
     }
     func radius(_ radius : CGFloat? = nil){
+        self.layer.drawsAsynchronously = true
         self.layer.masksToBounds = true
         if let radius = radius
         {
@@ -240,6 +245,93 @@ extension UIView {
         })
     }
 }
+
+extension String.Index{
+    func successor(in string:String)->String.Index{
+        return string.index(after: self)
+    }
+    
+    func predecessor(in string:String)->String.Index{
+        return string.index(before: self)
+    }
+    
+    func advance(_ offset:Int, `for` string:String)->String.Index{
+        return string.index(self, offsetBy: offset)
+    }
+}
+
+extension UITextView {
+    func chopOffNonAlphaNumericCharacters(text:String) -> String {
+        let nonAlphaNumericCharacters = CharacterSet.alphanumerics.inverted
+        let characterArray = text.components(separatedBy: nonAlphaNumericCharacters)
+        return characterArray[0]
+    }
+    
+    func resolveString(word: String) -> String {
+        var stringifiedWord = word
+        stringifiedWord.remove(at: stringifiedWord.startIndex)
+
+        let caracter : String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
+        let cs : CharacterSet = CharacterSet(charactersIn: caracter).inverted
+        
+        let array:[String] = stringifiedWord.components(separatedBy: cs)
+
+        stringifiedWord = array.reduce("", { (oldS:String, nString:String) -> String in
+            return oldS+nString
+        })
+        
+        return stringifiedWord
+    }
+    
+    func resolveHashTags() {
+        
+        let schemeMap = [
+            "#":"hash",
+            "@":"mention"
+        ]
+        
+        let nsText : String = self.text
+        
+        let words:[String] = nsText.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+        
+        let attrs = [
+            NSFontAttributeName : UIFont(name: "HelveticaNeue", size: 14.0)!,
+            NSForegroundColorAttributeName : UIColor.lightGray
+        ]
+        
+        let attrString = NSMutableAttributedString(string: nsText as String, attributes: attrs)
+        
+        for word in words {
+            var scheme:String? = nil
+            var prefix:String? = nil
+            
+            if word.hasPrefix("#") {
+                scheme = schemeMap["#"]
+                prefix = "#"
+            } else if word.hasPrefix("@") {
+                scheme = schemeMap["@"]
+                prefix = "@"
+            }
+            
+            if let scheme = scheme {
+                var stringifiedWord:String = word as String
+
+                stringifiedWord = prefix! + resolveString(word: stringifiedWord)
+                if let _ = Int(stringifiedWord) {
+                    // don't convert to hashtag if the entire string is numeric.
+                } else if stringifiedWord.isEmpty {
+                    // do nothing.
+                } else {
+                    let range = (nsText as NSString).range(of: stringifiedWord)
+                    attrString.addAttribute(NSLinkAttributeName, value: "\(scheme):\(stringifiedWord)", range: range)
+                }
+            }
+        }
+
+        self.attributedText = attrString
+    }
+}
+
 class Util {
     static func showAlert(_ title : String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -253,5 +345,68 @@ class Util {
 
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
+    }
+    
+    static func timeAgoSince(_ date: Date) -> String {
+        
+        let calendar = Calendar.current
+        let now = Date()
+        let unitFlags: NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfYear, .month, .year]
+        let components = (calendar as NSCalendar).components(unitFlags, from: date, to: now, options: [])
+        
+        if let year = components.year, year >= 2 {
+            return "\(year) years ago"
+        }
+        
+        if let year = components.year, year >= 1 {
+            return "Last year"
+        }
+        
+        if let month = components.month, month >= 2 {
+            return "\(month) months ago"
+        }
+        
+        if let month = components.month, month >= 1 {
+            return "Last month"
+        }
+        
+        if let week = components.weekOfYear, week >= 2 {
+            return "\(week) weeks ago"
+        }
+        
+        if let week = components.weekOfYear, week >= 1 {
+            return "Last week"
+        }
+        
+        if let day = components.day, day >= 2 {
+            return "\(day) days ago"
+        }
+        
+        if let day = components.day, day >= 1 {
+            return "Yesterday"
+        }
+        
+        if let hour = components.hour, hour >= 2 {
+            return "\(hour) hours ago"
+        }
+        
+        if let hour = components.hour, hour >= 1 {
+            return "An hour ago"
+        }
+        
+        if let minute = components.minute, minute >= 2 {
+            return "\(minute) minutes ago"
+        }
+        
+        if let minute = components.minute, minute >= 1 {
+            return "A minute ago"
+        }
+        
+        if let second = components.second, second >= 3 {
+            return "\(second) seconds ago"
+        }
+        
+        return "Just now"
+        
     }
 }

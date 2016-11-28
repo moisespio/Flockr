@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		45534CC98AC9C2239F9DA2D3 /* Pods_flockr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6521599E229E5FC307952235 /* Pods_flockr.framework */; };
 		BF29C4A81DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */; };
-		BF29C4AA1DEAB301003FAFCD /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4A91DEAB300003FAFCD /* Feed.swift */; };
+		BF29C4AA1DEAB301003FAFCD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4A91DEAB300003FAFCD /* Post.swift */; };
 		BF29C4B71DEAB498003FAFCD /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B31DEAB498003FAFCD /* Follow.swift */; };
 		BF29C4B81DEAB498003FAFCD /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B41DEAB498003FAFCD /* Like.swift */; };
 		BF29C4B91DEAB498003FAFCD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29C4B51DEAB498003FAFCD /* Photo.swift */; };
@@ -50,7 +50,7 @@
 		6521599E229E5FC307952235 /* Pods_flockr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flockr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7ED63A7E7E59849560E463 /* Pods-flockr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flockr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flockr/Pods-flockr.debug.xcconfig"; sourceTree = "<group>"; };
 		BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFeedTableViewCell.swift; sourceTree = "<group>"; };
-		BF29C4A91DEAB300003FAFCD /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		BF29C4A91DEAB300003FAFCD /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BF29C4B31DEAB498003FAFCD /* Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
 		BF29C4B41DEAB498003FAFCD /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		BF29C4B51DEAB498003FAFCD /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		BF6F6E891DEA78CF00900E2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BF29C4A91DEAB300003FAFCD /* Feed.swift */,
+				BF29C4A91DEAB300003FAFCD /* Post.swift */,
 				BF29C4B31DEAB498003FAFCD /* Follow.swift */,
 				BF29C4B41DEAB498003FAFCD /* Like.swift */,
 				BF29C4B51DEAB498003FAFCD /* Photo.swift */,
@@ -251,8 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				BF6F6EC11DEA8B0200900E2E /* FeedViewController.swift */,
-				BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */,
 				BF29C4BB1DEAB826003FAFCD /* FeedTableViewCell.swift */,
+				BF29C4A71DEA9FBE003FAFCD /* HeaderFeedTableViewCell.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 				BF29C4B81DEAB498003FAFCD /* Like.swift in Sources */,
 				BF29C4BC1DEAB826003FAFCD /* FeedTableViewCell.swift in Sources */,
 				BF6F6EBC1DEA85F700900E2E /* FlockrTools.swift in Sources */,
-				BF29C4AA1DEAB301003FAFCD /* Feed.swift in Sources */,
+				BF29C4AA1DEAB301003FAFCD /* Post.swift in Sources */,
 				BF6F6EBB1DEA85F700900E2E /* FlockrStylist.swift in Sources */,
 				BF6F6EC21DEA8B0200900E2E /* FeedViewController.swift in Sources */,
 			);

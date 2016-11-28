@@ -13,7 +13,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
 
-    var feed_list : [Feed] = []
+    var posts : [Post] = []
+    
+    var skip : Int = 0
+    var page : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,32 +41,75 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //Functions
     func loadFeed() {
-        Feed.load(page: 3) { (_Feed, error) in
+        Post.load(page: page) { (_Feed, error) in
             DispatchQueue.main.async(execute: {
-                self.feed_list = _Feed
-                self.updateTableView()
+                self.posts += _Feed
+                self.tableView.reloadData()
             })
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let post = posts[section]
+        
+        if post.photo.caption == "" {
+            return 2
+        } else {
+            return 3
+        }
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return feed_list.count
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.section == skip+10-4) {
+            skip = skip + 10
+            page += 1
+            self.loadFeed()
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedCell.rawValue, for: indexPath) as! FeedTableViewCell
+        var cell : FeedTableViewCell!
         
-        let post = feed_list[indexPath.section]
+        let post = posts[indexPath.section]
         
-        if let photo = post.photo, let file = photo.photo, let url = file.url {
-            cell.petPostPhoto.setImage(url: url)
+        switch indexPath.row {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedPhotoCell.rawValue, for: indexPath) as! FeedTableViewCell
+            if let photo = post.photo, let file = photo.photo, let url = file.url {
+                cell.petPostPhoto.setImage(url: url)
+            }
+        case 1 where tableView.numberOfRows(inSection: indexPath.section) == 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedStatusCell.rawValue, for: indexPath) as! FeedTableViewCell
+            //cell.contentView.layer.addBorder(.bottom, color: UIColor(hexa: "#F3F3F3"), thickness: 1)
+            cell.petPostLikeCount.setTitle((post.photo.likeCount?.stringValue)! + " CURTIDAS", for: .normal)
+            cell.petPostCommentCount.setTitle((post.photo.commentCount?.stringValue)!  + " COMENTÁRIOS", for: .normal)
+            
+            if let like = post.like {
+                cell.petPostLikeButton.setImage(#imageLiteral(resourceName: "heart-selected"), for: .normal)
+            } else {
+                cell.petPostLikeButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+            }
+        case 1 where tableView.numberOfRows(inSection: indexPath.section) == 3:
+            cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedCaptionCell.rawValue, for: indexPath) as! FeedTableViewCell
+            cell.setCellText(text: post.photo.caption!)
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.feedStatusCell.rawValue, for: indexPath) as! FeedTableViewCell
+            cell.contentView.layer.addBorder(.top, color: UIColor(hexa: "#F3F3F3"), thickness: 1)
+            cell.petPostLikeCount.setTitle((post.photo.likeCount?.stringValue)! + " CURTIDAS", for: .normal)
+            cell.petPostCommentCount.setTitle((post.photo.commentCount?.stringValue)!  + " COMENTÁRIOS", for: .normal)
+            
+            if let like = post.like {
+                cell.petPostLikeButton.setImage(#imageLiteral(resourceName: "heart-selected"), for: .normal)
+            } else {
+                cell.petPostLikeButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+            }
+        default:
+            print("Oops")
         }
-        
-        cell.petPostCaption.text = post.photo.caption
 
         return cell
     }
@@ -72,20 +118,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: FlockrCells.headerFeedCell.rawValue) as! HeaderFeedTableViewCell
         cell.petProfilePhoto.radius()
         
-        let post = feed_list[section]
-        
-        cell.petProfileUsername.text = post.profile.nickname
+        let post = posts[section]
+
+        cell.petProfileUsername.text = "@" + post.profile.nickname!
         if let profile = post.profile, let file = profile.profileImage, let url = file.url {
             cell.petProfilePhoto.setImage(url: url)
         }
 
+        cell.petPostTimeAgo.text = Util.timeAgoSince(post.photo.createdAt!).uppercased()
+
         let header = cell.contentView
-        header.layer.addBorder(.bottom, color: UIColor(hexa: "#E5E5E5"), thickness: 1)
-        header.layer.addBorder(.top, color: UIColor(hexa: "#E5E5E5"), thickness: 1)
+        //header.layer.addBorder(.bottom, color: UIColor(hexa: "#E5E5E5"), thickness: 1)
+        //header.layer.addBorder(.top, color: UIColor(hexa: "#E5E5E5"), thickness: 1)
         
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
@@ -115,15 +163,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             return 700
         }
     }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.section == Skip+10-4) {
-            Skip = Skip + 10
-            page += 1
-            self.loadData(nil)
-        }
-    }
-     */
+    */
     
     func updateTableView() {
         //refreshControl.endRefreshing()
